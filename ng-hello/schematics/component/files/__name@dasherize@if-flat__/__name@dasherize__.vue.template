@@ -1,0 +1,12 @@
+<template>
+    <p><%= dasherize(name) %> works!</p>
+</template>
+
+<script lang="ts">
+import <%= classify(name) %> from './<%= dasherize(name) %>.ts';
+export default <%= classify(name) %>;
+</script>
+
+<style scoped lang="<%= dasherize(style) %>">
+@import "./<%= dasherize(name) %>.<%= dasherize(style) %>";
+</style>

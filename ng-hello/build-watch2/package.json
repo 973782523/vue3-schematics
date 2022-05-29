@@ -1,0 +1,36 @@
+{
+  "name": "ng-hello",
+  "version": "0.0.0",
+  "description": "A blank schematics",
+  "scripts": {
+    "build-watch1": "tsc -p tsconfig.json",
+    "build-watch": "tsc -p tsconfig.json --watch",
+    "build-watch2": "tsc -p tsconfig.schematics.json --watch",
+    "test": "npm run build && jasmine src/**/*_spec.js",
+    "start": "schematics:c",
+    "build:p": "tsc -p tsconfig.schematics.json & npm run postbuild",
+    "postbuild": "rimraf ../node_modules/ng-hello & copyfiles package.json schematics/*/schema.json schematics/*/files/** schematics/collection.json ../node_modules/ng-hello/ build-watch2"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "schematics": "./schematics/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^13.3.5",
+    "@angular-devkit/schematics": "^13.3.5",
+    "typescript": "~4.6.2"
+  },
+  "ng-add": {
+    "save": "devDependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.1",
+    "@types/jasmine": "~3.10.0",
+    "jasmine": "^4.0.0",
+    "copyfiles": "file:../../node_modules/copyfiles",
+    "typescript": "file:../../node_modules/typescript",
+    "rimraf": "file:../../node_modules/rimraf"
+  }
+}

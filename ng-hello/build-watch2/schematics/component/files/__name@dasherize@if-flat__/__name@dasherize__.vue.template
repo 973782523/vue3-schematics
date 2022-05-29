@@ -1,0 +1,14 @@
+<template>
+
+</template>
+
+<script>
+    console.log(1)
+export default {
+  name: "<%= dasherize(name) %>"
+}
+</script>
+
+<style scoped lang="<%= dasherize(style) %>">
+@import "./<%= dasherize(name) %>.<%= dasherize(style) %>";
+</style>

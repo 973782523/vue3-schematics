@@ -1,0 +1,8 @@
+export default {
+    name: "<%= classify(name) %>",
+    data(){
+        return {
+
+        }
+    }
+}
